@@ -1,0 +1,12 @@
+pycapnp==2.0.0
+jinja2
+black
+cython>=3
+flake8
+setuptools
+pkgconfig
+pytest
+sphinx
+sphinx-multiversion
+tox
+wheel

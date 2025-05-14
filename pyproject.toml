@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "capnpython"
+version = "0.1.0-dev"
+description = "Python code generator for CapnProto"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "GNU GPLv3"}
+authors = [
+    {name = "Alexyander Harris", email = "helpful.harris@gmail.com"},
+]
+urls = { "Homepage" = "https://github.com/h3lpful/capnpython" }
+keywords = ["capnproto", "capnp", "codegen", "capnpython"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pycapnp==2.0.0",
+    "jinja2>=3.0.0",
+]
+
+[project.optional-dependencies]
+# Add optional dependencies here if needed
+
+[project.scripts]
+capnpc-python = "capnpython.compiler.compile:main"
+
+[tool.setuptools.packages.find]
+include = ["capnpython", "capnpython.*"]
+exclude = ["tests", "tests.*"]
